@@ -17,13 +17,13 @@
 #cd site/wwwroot;
 
 #Get the 4.9.9 wp core
-wp core download --version=4.9.9 ;
+wp core download --version=4.9.9 --allow-root;
 
 #Create wp-config.php
-wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 ;
+wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root;
 
 #Subfolder multisite
-wp core multisite-install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 ;
+wp core multisite-install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 --allow-root;
 
 #Create .htaccess file
 cat >.htaccess <<EOL
@@ -45,10 +45,10 @@ EOL
 #cat .htaccess ;
 
 #Install aiom
-wp plugin install all-in-one-wp-migration https://servmask.com/purchase/f2de6bb7-d3b8-442c-b40d-07a25856f822 https://servmask.com/purchase/49fb4af3-acaf-4e63-91a5-ca3df9f67ab7 --activate ;
+wp plugin install all-in-one-wp-migration https://servmask.com/purchase/f2de6bb7-d3b8-442c-b40d-07a25856f822 https://servmask.com/purchase/49fb4af3-acaf-4e63-91a5-ca3df9f67ab7 --activate --allow-root;
 
 #Update plugins just in case
-wp plugin update --all ;
+wp plugin update --all --allow-root;
 
 
 echo "*****************************************************************************************" ;
