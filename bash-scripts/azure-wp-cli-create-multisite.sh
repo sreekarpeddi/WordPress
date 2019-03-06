@@ -10,6 +10,9 @@
 #$7 = admin password 
 #$8 = admin email
 
+#Example of how to call the script:
+#$ sh azure-wp-cli-create-multisite.sh db_name db_username db_password db_host https://siteurl.com wp_username wp_userpass wp_useremail
+
 #Go to web root
 #cd site/wwwroot;
 
