@@ -14,16 +14,16 @@
 #$ sh azure-wp-cli-create-multisite.sh db_name db_username db_password db_host https://siteurl.com wp_username wp_userpass wp_useremail
 
 #Go to web root
-#cd site/wwwroot;
+cd /home/site/wwwroot/ ;
 
 #Get the 4.9.9 wp core
-wp core download --version=4.9.9 --allow-root;
+wp core download --version=4.9.9 --allow-root ;
 
 #Create wp-config.php
-wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root;
+wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root ;
 
 #Subfolder multisite
-wp core multisite-install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 --allow-root;
+wp core multisite-install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 --allow-root ;
 
 #Create .htaccess file
 cat >.htaccess <<EOL
@@ -46,21 +46,17 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 EOL
 
 #Install aiom
-wp plugin install all-in-one-wp-migration https://servmask.com/purchase/f2de6bb7-d3b8-442c-b40d-07a25856f822 https://servmask.com/purchase/49fb4af3-acaf-4e63-91a5-ca3df9f67ab7 --activate --allow-root;
+wp plugin install all-in-one-wp-migration https://servmask.com/purchase/f2de6bb7-d3b8-442c-b40d-07a25856f822 https://servmask.com/purchase/49fb4af3-acaf-4e63-91a5-ca3df9f67ab7 --activate --allow-root ;
 
 #Update plugins just in case
-wp plugin update --all --allow-root;
+wp plugin update --all --allow-root ;
 
 __odi="
-   __________  ______   ____  ____  ____   _       __               ______                     
-  / ____/ __ \/_  __/  / __ \/ __ \/  _/  | |     / /___  _________/ / __ \________  __________
- / /   / / / / / /    / / / / / / // /    | | /| / / __ \/ ___/ __  / /_/ / ___/ _ \/ ___/ ___/
-/ /___/ /_/ / / /    / /_/ / /_/ // /     | |/ |/ / /_/ / /  / /_/ / ____/ /  /  __(__  |__  ) 
-\____/_____/ /_/     \____/_____/___/     |__/|__/\____/_/   \__,_/_/   /_/   \___/____/____/  
-                                                                                               
+  ________  ______  ___           ____         
+ / ___/ _ \/_  __/ / _ \___ _  __/ __ \___  ___
+/ /__/ // / / /   / // / -_) |/ / /_/ / _ \(_-<
+\___/____/ /_/   /____/\__/|___/\____/ .__/___/
+                                    /_/                                                                      
 "
-
-echo "*****************************************************************************************" ;
 echo "$__odi"
 echo "Install completed, you can now go to: $5" ;
-echo "*****************************************************************************************" ;
