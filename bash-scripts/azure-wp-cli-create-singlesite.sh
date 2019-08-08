@@ -20,7 +20,7 @@ cd /home/site/wwwroot/ ;
 #wp core download --allow-root ;
 
 #Create wp-config.php
-#wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root ;
+wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root ;
 
 #Subfolder multisite
 wp core install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 --allow-root ;
