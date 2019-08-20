@@ -11,19 +11,27 @@
 #$8 = admin email
 
 #Example of how to call the script:
-#$ sh azure-wp-cli-create-multisite.sh db_name db_username db_password db_host https://siteurl.com wp_username wp_userpass wp_useremail
+#$ sh azure-wp-cli-create-multisite.sh db_name db_username db_password db_host http://siteurl.com wp_username wp_userpass wp_useremail
 
 #Go to web root
+echo "Going to site root" ;
 cd /home/site/wwwroot/ ;
 
 #Get the wp core
 #wp core download --allow-root ;
 
 #Create wp-config.php
-wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root ;
+#wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root ;
 
-#Subfolder multisite
+#Copy azure specific wp-config.php
+echo "Copying Azure wp-config.php to site root" ;
+cp /usr/local/bin/devops/wp-config.php /home/site/wwwroot/wp-config.php ;
+
+#Install single site
 wp core install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 --allow-root ;
+
+#Install theme
+wp theme install https://github.com/timloden/CAWeb-Standard/archive/master.zip --activate --allow-root ;
 
 #Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
 wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer --activate --allow-root ;
