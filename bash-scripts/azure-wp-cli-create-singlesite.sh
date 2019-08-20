@@ -11,7 +11,7 @@
 #$8 = admin email
 
 #Example of how to call the script:
-#$ sh azure-wp-cli-create-multisite.sh db_name db_username db_password db_host http://siteurl.com wp_username wp_userpass wp_useremail
+#$ sh azure-wp-cli-create-singlesite.sh Site-title http://siteurl.com wp_username wp_userpass wp_useremail
 
 #Go to web root
 echo "Going to site root" ;
@@ -28,7 +28,7 @@ echo "Copying Azure wp-config.php to site root" ;
 cp /usr/local/bin/devops/wp-config.php /home/site/wwwroot/wp-config.php ;
 
 #Install single site
-wp core install --title=$5 --url=$5 --admin_user=$6 --admin_password=$7 --admin_email=$8 --allow-root ;
+wp core install --title=$1 --url=$2 --admin_user=$3 --admin_password=$4 --admin_email=$5 --allow-root ;
 
 #Install theme
 wp theme install https://github.com/timloden/CAWeb-Standard/archive/master.zip --activate --allow-root ;
