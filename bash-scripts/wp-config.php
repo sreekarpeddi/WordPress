@@ -25,28 +25,28 @@
  * The name of the database for WordPress 
  */
 
-$connectstr_dbhost = getenv('DATABASE_HOST');
-$connectstr_dbname = getenv('DATABASE_NAME');
-$connectstr_dbusername = getenv('DATABASE_USERNAME');
-$connectstr_dbpassword = getenv('DATABASE_PASSWORD');
+// $connectstr_dbhost = getenv('DATABASE_HOST');
+// $connectstr_dbname = getenv('DATABASE_NAME');
+// $connectstr_dbusername = getenv('DATABASE_USERNAME');
+// $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
 
-define('DB_NAME', $connectstr_dbname);
+define('DB_NAME', getenv('DATABASE_NAME'));
 
 /**
  * MySQL database username 
 */
-define('DB_USER', $connectstr_dbusername);
+define('DB_USER', getenv('DATABASE_USERNAME'));
 
 /**
  * MySQL database password 
 */
-define('DB_PASSWORD', $connectstr_dbpassword);
+define('DB_PASSWORD', getenv('DATABASE_PASSWORD'));
 
 /**
  * MySQL hostname 
 */
-define('DB_HOST', $connectstr_dbhost);
+define('DB_HOST', getenv('DATABASE_HOST'));
 
 /**
  * Database Charset to use in creating database tables. 
