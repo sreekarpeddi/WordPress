@@ -1,6 +1,6 @@
 <?php
 $connectstr_dbhost = getenv('DATABASE_HOST');
-$connectstr_dbname = getenv('WEBSITES_ENABLE_APP_SERVICE_STORAGE');
+$connectstr_dbname = getenv('DATABASE_NAME');
 $connectstr_dbusername = getenv('DATABASE_USERNAME');
 $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
@@ -8,4 +8,4 @@ $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
 echo 'starting wp-config update';
 echo 'dbname: ' . $connectstr_dbname;
-//echo shell_exec('wp config set DB_NAME' . getenv('DATABASE_NAME') . '--allow-root ;');
+echo shell_exec('wp config set DB_NAME' . $connectstr_dbname . '--allow-root ;');
