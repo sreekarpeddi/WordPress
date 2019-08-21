@@ -8,4 +8,4 @@ $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
 echo 'starting wp-config update/n';
 echo 'dbname: ' . getenv('DATABASE_NAME');
-echo shell_exec('wp config set DB_NAME' . getenv('DATABASE_NAME') . '--allow-root ;');
+//echo shell_exec('wp config set DB_NAME' . getenv('DATABASE_NAME') . '--allow-root ;');
