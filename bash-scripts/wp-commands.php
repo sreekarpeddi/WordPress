@@ -1,6 +1,6 @@
 <?php
 $connectstr_dbhost = getenv('DATABASE_HOST');
-$connectstr_dbname = getenv('CUSTOMCONNSTR_test');
+$connectstr_dbname = getenv('WEBSITES_ENABLE_APP_SERVICE_STORAGE');
 $connectstr_dbusername = getenv('DATABASE_USERNAME');
 $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
