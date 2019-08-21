@@ -24,8 +24,12 @@ cd /home/site/wwwroot/ ;
 #wp config create --dbname=$1 --dbuser=$2 --dbpass=$3 --dbhost=$4 --allow-root ;
 
 #Copy azure specific wp-config.php
-echo "Copying Azure wp-config.php to site root" ;
+echo "Updating wp-config.php to not use connection strings" ;
 #cp /usr/local/bin/devops/wp-config.php /home/site/wwwroot/wp-config.php ;
+wp config set DB_NAME $DATABASE_NAME ;
+wp config set DB_USER $DATABASE_USER ;
+wp config set DB_PASSWORD $DATABASE_PASSWORD ;
+wp config set DB_HOST $DATABASE_HOST ;
 
 #Install single site
 wp core install --title=$1 --url=$2 --admin_user=$3 --admin_password=$4 --admin_email=$5 --allow-root ;
