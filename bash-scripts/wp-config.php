@@ -26,10 +26,10 @@
  */
 
 // $connectstr_dbhost = getenv('DATABASE_HOST');
- $connectstr_dbname = getenv('DATABASE_NAME');
+// $connectstr_dbname = getenv('DATABASE_NAME');
 // $connectstr_dbusername = getenv('DATABASE_USERNAME');
 // $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
-echo $connectstr_dbname;
+
 
 define('DB_NAME', getenv('DATABASE_NAME'));
 
