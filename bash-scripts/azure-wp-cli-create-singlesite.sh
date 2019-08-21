@@ -27,13 +27,13 @@ echo $content ;
 
 
 #Install single site
-wp core install --title=$1 --url=$2 --admin_user=$3 --admin_password=$4 --admin_email=$5 --allow-root ;
+#wp core install --title=$1 --url=$2 --admin_user=$3 --admin_password=$4 --admin_email=$5 --allow-root ;
 
 #Install theme
-wp theme install https://github.com/timloden/CAWeb-Standard/archive/master.zip --activate --allow-root ;
+#wp theme install https://github.com/timloden/CAWeb-Standard/archive/master.zip --activate --allow-root ;
 
 #Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
-wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer --activate --allow-root ;
+#wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer --activate --allow-root ;
 
 #Update plugins just in case
 wp plugin update --all --allow-root ;
