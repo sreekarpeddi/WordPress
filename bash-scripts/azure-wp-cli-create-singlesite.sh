@@ -25,7 +25,7 @@ cd /home/site/wwwroot/ ;
 
 #Copy azure specific wp-config.php
 echo "Copying Azure wp-config.php to site root" ;
-cp /usr/local/bin/devops/wp-config.php /home/site/wwwroot/wp-config.php ;
+#cp /usr/local/bin/devops/wp-config.php /home/site/wwwroot/wp-config.php ;
 
 #Install single site
 wp core install --title=$1 --url=$2 --admin_user=$3 --admin_password=$4 --admin_email=$5 --allow-root ;
