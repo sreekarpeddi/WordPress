@@ -1,42 +1,25 @@
 #!/bin/bash
 
-#Variables --------------------
-#$1 = db name
-#$2 = db user 
-#$3 = db password
-#$4 = db host
-#$5 = site url 
-#$6 = admin user 
-#$7 = admin password 
-#$8 = admin email
-
-#Example of how to call the script:
-#$ sh azure-wp-cli-create-singlesite.sh Site-title http://siteurl.com wp_username wp_userpass wp_useremail
-
 #Go to web root
+
 echo "Going to site root" ;
 cd /home/site/wwwroot/ ;
 
-#Get the wp core
-#wp core download --allow-root ;
+#Copy wp-commands.php
+echo "copying wp-commands.php..."
+cp /usr/local/bin/devops/wp-commands.php /home/site/wwwroot/wp-commands.php ;
+echo "copied wp-commands.php"
 
-#Update wp-config via wp-commands.php
+#Run wp-commands.php
 
-content=$(wget $2/wp-commands.php -q -O -) ;
+content=$(wget $1/wp-commands.php -q -O -) ;
 echo $content ;
 
+#Remove wp-commands file
 
-#Install single site
-#wp core install --title=$1 --url=$2 --admin_user=$3 --admin_password=$4 --admin_email=$5 --allow-root ;
-
-#Install theme
-wp theme install https://github.com/timloden/CAWeb-Standard/archive/master.zip --activate --allow-root ;
-
-#Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
-wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer --activate --allow-root ;
-
-#Update plugins just in case
-wp plugin update --all --allow-root ;
+echo "deleting wp-commands.php..."
+rm /home/site/wwwroot/wp-commands.php ;
+echo "deleted wp-commands.php"
 
 __odi="
    ______      ______                     
