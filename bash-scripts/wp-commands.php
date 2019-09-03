@@ -8,7 +8,7 @@ $admin_user = getenv('ADMIN_USER');
 $admin_password = getenv('ADMIN_PASSWORD');
 $admin_email = getenv('ADMIN_EMAIL');
 
-$site_url = 'http://' . $_SERVER['HTTP_HOST'];
+$site_url = 'https://' . $_SERVER['HTTP_HOST'];
 
 // update wp-config to our application variables
 
@@ -25,10 +25,10 @@ echo shell_exec("wp core install --title='$site_url' --url='$site_url' --admin_u
 
 echo shell_exec("wp theme install https://github.com/timloden/CAWeb-Standard/archive/master.zip --activate --allow-root ;");
 
-#Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
+// Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
 
 echo shell_exec("wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer --activate --allow-root ;");
 
-#Update plugins just in case
+// Update plugins just in case
 
 echo shell_exec("wp plugin update --all --allow-root ;");
