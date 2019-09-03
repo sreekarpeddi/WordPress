@@ -8,7 +8,7 @@ cd /home/site/wwwroot/ ;
 wp core download --allow-root ;
 
 # Run wp-commands.php directly
-wp eval-file /usr/local/bin/devops/wp-commands.php ;
+wp eval-file /usr/local/bin/devops/wp-commands.php --allow root ;
 
 # Create .htaccess file
 cat >.htaccess <<EOL
