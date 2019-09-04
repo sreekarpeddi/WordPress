@@ -7,8 +7,18 @@ cd /home/site/wwwroot/ ;
 # Get the wp core
 wp core download --allow-root ;
 
+#Copy wp-commands.php
+echo "copying wp-commands.php..."
+cp /usr/local/bin/devops/wp-commands.php /home/site/wwwroot/wp-commands.php ;
+echo "copied wp-commands.php"
+
 # Run wp-commands.php directly
-wp eval-file /usr/local/bin/devops/wp-commands.php --allow root ;
+wp eval-file wp-commands.php --allow root ;
+
+#Remove wp-commands file
+echo "deleting wp-commands.php..."
+rm /home/site/wwwroot/wp-commands.php ;
+echo "deleted wp-commands.php"
 
 # Create .htaccess file
 cat >.htaccess <<EOL
