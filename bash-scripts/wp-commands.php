@@ -27,7 +27,7 @@ echo shell_exec("wp theme install https://github.com/timloden/CAWeb-Standard/arc
 
 // Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
 
-echo shell_exec("wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer --activate --allow-root ;");
+echo shell_exec("wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer wp-mail-smtp --activate --allow-root ;");
 
 // Update plugins just in case
 
