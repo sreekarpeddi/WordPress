@@ -8,7 +8,7 @@ $admin_user = getenv('ADMIN_USER');
 $admin_password = getenv('ADMIN_PASSWORD');
 $admin_email = getenv('ADMIN_EMAIL');
 
-$site_url = 'https://' . $_SERVER['HTTP_HOST'];
+$site_url = getenv('SITE_URL');
 
 // update wp-config to our application variables
 
