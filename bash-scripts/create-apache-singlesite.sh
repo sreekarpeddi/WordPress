@@ -150,4 +150,4 @@ __odi="
 \____/\__,_/_/_/   /_/   \___/____/____/
 "
 echo "$__odi"
-echo "Install completed, you can now go to: $1" ;
+echo "Install completed!" ;

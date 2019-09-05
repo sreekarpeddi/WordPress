@@ -1,18 +1,5 @@
 #!/bin/bash
 
-#Variables --------------------
-#$1 = db name
-#$2 = db user 
-#$3 = db password
-#$4 = db host
-#$5 = site url 
-#$6 = admin user 
-#$7 = admin password 
-#$8 = admin email
-
-#Example of how to call the script:
-#$ sh azure-wp-cli-create-multisite.sh db_name db_username db_password db_host https://siteurl.com wp_username wp_userpass wp_useremail
-
 #Go to web root
 cd /home/site/wwwroot/ ;
 
@@ -167,4 +154,4 @@ __odi="
 \____/\__,_/_/_/   /_/   \___/____/____/
 "
 echo "$__odi"
-echo "Install completed, you can now go to: $5" ;
+echo "Install completed!" ;
