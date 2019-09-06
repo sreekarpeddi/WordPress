@@ -10,14 +10,11 @@ $admin_email = getenv('ADMIN_EMAIL');
 
 $site_url = getenv('SITE_URL');
 
-// update wp-config to our application variables
+// create wp-config
 
-echo shell_exec("wp config set DB_NAME '$connectstr_dbname' --allow-root ;");
-echo shell_exec("wp config set DB_HOST '$connectstr_dbhost' --allow-root ;");
-echo shell_exec("wp config set DB_USER '$connectstr_dbusername' --allow-root ;");
-echo shell_exec("wp config set DB_PASSWORD '$connectstr_dbpassword' --allow-root ;");
+echo shell_exec("wp config create --dbname='$connectstr_dbname' --dbuser='$connectstr_dbusername' --dbpass='$connectstr_dbpassword' --dbhost='$connectstr_dbhost' --allow-root ;");
 
-// install WP with out site variables
+// install WP 
 
 echo shell_exec("wp core multisite-install --subdomains --title='$site_url' --url='$site_url' --admin_user='$admin_user' --admin_password='$admin_password' --admin_email='$admin_email' --allow-root ;");
 
