@@ -13,7 +13,7 @@ cp /usr/local/bin/devops/wp-commands.php /home/site/wwwroot/wp-commands.php ;
 echo "copied wp-commands.php"
 
 # Run wp-commands.php directly
-wp eval-file wp-commands.php --allow-root ;
+wp eval-file wp-commands.php --skip-wordpress --allow-root ;
 
 #Remove wp-commands file
 echo "deleting wp-commands.php..."
