@@ -12,7 +12,7 @@ cp /usr/local/bin/devops/wp-commands-multisite.php /home/site/wwwroot/wp-command
 echo "copied wp-commands.php"
 
 # Run wp-commands.php directly
-wp eval-file wp-commands-multisite.php --allow root ;
+wp eval-file wp-commands-multisite.php --allow-root ;
 
 #Remove wp-commands file
 echo "deleting wp-commands.php..."
