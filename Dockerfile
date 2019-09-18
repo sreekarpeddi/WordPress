@@ -15,7 +15,6 @@ RUN apt-get install -y mysql-client
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 EXPOSE 2222 8080 80
 
-CMD ["eval $(printenv | awk -F= '{print "export " "\""$1"\"""=""\""$2"\"" }' >> /etc/profile)"]
 
 #RUN ln -s /usr/local/bin/devops/docker-entrypoint.sh /
 ENTRYPOINT [ "/usr/local/bin/devops/docker-entrypoint.sh" ]
