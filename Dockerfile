@@ -12,7 +12,8 @@ RUN chmod -R 755 /usr/local/bin/devops/
 
 RUN apt-get update
 RUN apt-get install -y mysql-client 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+#CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+CMD ["sudo service apache2 start"]
 EXPOSE 2222 8080 80
 
 
