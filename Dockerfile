@@ -9,10 +9,10 @@ COPY htaccesssubfolder /usr/local/bin/devops/
 COPY docker-entrypoint.sh /usr/local/bin/devops/
 RUN chmod -R 755 /usr/local/bin/devops/
 
-#RUN apt-get update
+RUN apt-get update
 RUN apt-get install -y mysql-client 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
-#CMD ["sudo service apache2 start"]
+#CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+CMD ["sudo service apache2 start"]
 EXPOSE 2222 8080 80
 
 #RUN ln -s /usr/local/bin/devops/docker-entrypoint.sh /
