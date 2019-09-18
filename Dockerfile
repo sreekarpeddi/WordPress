@@ -1,4 +1,4 @@
-FROM appsvc/php:7.2.11-apache_1810291954
+FROM appsvc/php:7.3-apache_1908260522
 MAINTAINER ODI DevOps  "devops@state.ca.gov"
 
 COPY wp-cli.phar /usr/local/bin/wp
@@ -12,10 +12,9 @@ RUN chmod -R 755 /usr/local/bin/devops/
 #RUN apt-get update
 RUN apt-get install -y mysql-client 
 #CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
-CMD apachectl -D FOREGROUND
 EXPOSE 2222 8080 80
 
 #RUN ln -s /usr/local/bin/devops/docker-entrypoint.sh /
 ENTRYPOINT [ "/usr/local/bin/devops/docker-entrypoint.sh" ]
-
+CMD apachectl -D FOREGROUND
 
