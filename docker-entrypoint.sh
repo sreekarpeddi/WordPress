@@ -2,6 +2,6 @@
 set -e
 
 
-/usr/local/bin/devops/azure-wp-cli-create-singlesite.sh
+/usr/local/bin/devops/create-apache-singlesite.sh
 
 exec "$@"
