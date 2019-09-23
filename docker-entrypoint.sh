@@ -3,6 +3,11 @@ set -e
 
 echo " NOW STARTING THE SINGE SITE CONFIGURATION" 
 
-/usr/local/bin/devops/create-apache-singlesite.sh
+	if [ "$1" = 'single' ]; then
+        
+         rm -rf /home/site/wwroot/* 
+	  /usr/local/bin/devops/create-apache-singlesite.sh
+
+	fi
 
 exec "$@"

@@ -150,4 +150,6 @@ __odi="
 \____/\__,_/_/_/   /_/   \___/____/____/
 "
 echo "$__odi"
-echo "Install completed!" ;
+echo "Install completed!" 
+echo "Starting Apache"
+apache2ctl -DFOREGROUND
