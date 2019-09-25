@@ -1,23 +1,20 @@
-FROM appsvc/php:7.2.11-apache_1810291954
+FROM appsvc/php:7.3-apache_1908051448
 MAINTAINER ODI DevOps  "devops@state.ca.gov"
-
+ 
 COPY wp-cli.phar /usr/local/bin/wp
+
 
 COPY bash-scripts /usr/local/bin/devops/
 COPY htaccesssubdomain /usr/local/bin/devops/
 COPY htaccesssubfolder /usr/local/bin/devops/
-
-#RUN apt-get install -y \
-#    mysql-client 
-
-
+COPY docker-entrypoint.sh /usr/local/bin/devops/
+COPY startapache.sh /usr/local/bin/devops/
+RUN chmod -R 755 /usr/local/bin/devops/ 
+#RUN apt-get update mysql-client
+RUN apt-get install -y \
+    mysql-client
 EXPOSE 2222 8080 80
-
-CMD ["eval $(printenv | awk -F= '{print "export " "\""$1"\"""=""\""$2"\"" }' >> /etc/profile)"]
-
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
-
-#ENTRYPOINT ["entrypoint.sh"]
-
-
-
+#CMD [ "/usr/local/bin/devops/create-apache-singlesite.sh" ]
+CMD [ "/usr/local/bin/devops/docker-entrypoint.sh", "single" ]
+#ENTRYPOINT ["bash", "/usr/local/bin/devops/docker-entrypoint.sh"  ]
