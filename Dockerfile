@@ -8,7 +8,6 @@ COPY bash-scripts /usr/local/bin/devops/
 COPY htaccesssubdomain /usr/local/bin/devops/
 COPY htaccesssubfolder /usr/local/bin/devops/
 COPY docker-entrypoint.sh /usr/local/bin/devops/
-COPY startapache.sh /usr/local/bin/devops/
 RUN chmod -R 755 /usr/local/bin/devops/ 
 #RUN apt-get update mysql-client
 RUN apt-get install -y \
