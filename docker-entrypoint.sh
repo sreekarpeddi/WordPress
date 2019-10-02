@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo " NOW STARTING THE SINGE SITE CONFIGURATION" 
+echo " NOW STARTING THE  SITE CONFIGURATION" 
 
 	if [ "$1" = 'single' ]; then
         
