@@ -20,6 +20,7 @@ $redis_password = getenv('WP_REDIS_PASSWORD');
 $site_url = getenv('SITE_URL');
 
 // divi theme token
+$caweb_version = getenv('CAWEB_VERSION');
 $divi_token = getenv('DIVI_TOKEN');
 
 // create wp-config
@@ -32,7 +33,7 @@ echo shell_exec("wp core install --title='$site_url' --url='$site_url' --admin_u
 
 // install divi and caweb themes
 echo shell_exec("wp theme install https://api.github.com/repos/Danny-Guzman/Divi/zipball/master?token=$divi_token --allow-root ;");
-echo shell_exec("wp theme install https://github.com/CA-CODE-Works/CAWeb/archive/master.zip --activate --allow-root ;");
+echo shell_exec("wp theme install https://github.com/CA-CODE-Works/CAWeb/archive/$caweb_version.zip --activate --allow-root ;");
 
 // Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
 
