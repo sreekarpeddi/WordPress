@@ -17,3 +17,5 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 #CMD [ "/usr/local/bin/devops/create-apache-singlesite.sh" ]
 CMD [ "/usr/local/bin/devops/docker-entrypoint.sh", "single" ]
 #ENTRYPOINT ["bash", "/usr/local/bin/devops/docker-entrypoint.sh"  ]
+
+
