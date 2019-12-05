@@ -33,7 +33,7 @@ echo shell_exec("wp core install --title='$site_url' --url='$site_url' --admin_u
 
 // install divi and caweb themes
 echo shell_exec("wp theme install https://api.github.com/repos/Danny-Guzman/Divi/zipball/master?access_token=$divi_token --allow-root ;");
-echo shell_exec("foreach( glob( 'wp-content/themes/Danny-Guzman-Divi*' ) as $f ){ rename( $f, 'wp-content/themes/Divi'); }");
+foreach( glob( 'wp-content/themes/Danny-Guzman-Divi*' ) as $f ){ rename( $f, 'wp-content/themes/Divi'); };
 echo shell_exec("wp theme install https://github.com/CA-CODE-Works/CAWeb/archive/$caweb_version.zip --activate --allow-root ;");
 
 // Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
