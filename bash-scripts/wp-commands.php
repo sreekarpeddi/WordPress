@@ -31,6 +31,12 @@ echo shell_exec("wp config create --dbname='$connectstr_dbname' --dbuser='$conne
 
 echo shell_exec("wp core install --title='$site_url' --url='$site_url' --admin_user='$admin_user' --admin_password='$admin_password' --admin_email='$admin_email' --allow-root ;");
 
+// Enable WP DEBUG
+echo shell_exec("wp config set WP_DEBUG true --allow-root ;");
+echo shell_exec("wp config set WP_DEBUG_LOG true --allow-root ;");
+echo shell_exec("wp config set WP_DEBUG_DISPLAY true --allow-root ;");
+
+
 // install divi and caweb themes
 echo shell_exec("wp theme install https://api.github.com/repos/Danny-Guzman/Divi/zipball/master?access_token=$divi_token --allow-root ;");
 foreach( glob( 'wp-content/themes/Danny-Guzman-Divi*' ) as $f ){ rename( $f, 'wp-content/themes/Divi'); };
