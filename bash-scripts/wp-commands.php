@@ -44,7 +44,7 @@ echo shell_exec("wp theme install https://github.com/CA-CODE-Works/CAWeb/archive
 
 // Install Updraft Plus, 2FA, SEO Framework, WP-Optimize and ReSmush.it
 
-echo shell_exec("wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer wp-mail-smtp --activate --allow-root ;");
+// echo shell_exec("wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer wp-mail-smtp --activate --allow-root ;");
 
 if ($redis_host ) {
     // get the redis plugin
