@@ -1,5 +1,14 @@
 <?php
 
+$filename = './wp-config.php';
+ 
+if(file_exists($filename)){
+ echo sprintf('file %s exists',$filename);
+ return 0;   
+}else{
+ echo sprintf('file %s does not exist',$filename);
+    
+    
 // get db settings
 $connectstr_dbhost = getenv('DATABASE_HOST');
 $connectstr_dbname = getenv('DATABASE_NAME');
@@ -12,10 +21,11 @@ $admin_password = getenv('ADMIN_PASSWORD');
 $admin_email = getenv('ADMIN_EMAIL');
 
 //get redis settings
+/*
 $redis_port = getenv('WP_REDIS_PORT');
 $redis_host = getenv('WP_REDIS_HOST');
 $redis_password = getenv('WP_REDIS_PASSWORD');
-
+*/
 // get site url
 $site_url = getenv('SITE_URL');
 
@@ -46,7 +56,8 @@ echo shell_exec("wp theme install https://github.com/CA-CODE-Works/CAWeb/archive
 
 // echo shell_exec("wp plugin install updraftplus two-factor autodescription wp-optimize resmushit-image-optimizer wp-mail-smtp --activate --allow-root ;");
 
-if ($redis_host ) {
+/*
+    if ($redis_host ) {
     // get the redis plugin
     echo shell_exec("wp plugin install redis-cache --activate --allow-root ;");
     // set redis variables in wp-config
@@ -55,7 +66,11 @@ if ($redis_host ) {
     echo shell_exec("wp config set WP_REDIS_PASSWORD '$redis_password' --allow-root ;");
     echo shell_exec("wp config set WP_REDIS_SELECTIVE_FLUSH true --raw --allow-root ;");
 }
-
+*/
 // Update plugins just in case
 
-echo shell_exec("wp plugin update --all --allow-root ;");
+//echo shell_exec("wp plugin update --all --allow-root ;");
+    
+}
+
+?>
