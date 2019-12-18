@@ -30,7 +30,7 @@
 // $connectstr_dbusername = getenv('DATABASE_USERNAME');
 // $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
-define('DISABLE_WP_CRON', true); 
+//define('DISABLE_WP_CRON', true); 
 
 define('DB_NAME', getenv('DATABASE_NAME'));
 
