@@ -39,7 +39,7 @@ echo shell_exec("wp config create --dbname='$connectstr_dbname' --dbuser='$conne
 
 // install WP 
 
-echo shell_exec("wp core install --title='$site_url' --url='$site_url' --admin_user='$admin_user' --admin_password='$admin_password' --admin_email='$admin_email' --allow-root ;");
+//echo shell_exec("wp core install --title='$site_url' --url='$site_url' --admin_user='$admin_user' --admin_password='$admin_password' --admin_email='$admin_email' --allow-root ;");
 
 // Enable WP DEBUG
 echo shell_exec("wp config set WP_DEBUG true --allow-root ;");
