@@ -4,8 +4,8 @@
 echo "Going to site root" ;
 cd /home/site/wwwroot/ ;
 
-# Get the wp core
-wp core download --allow-root ;
+# Get the wp core (old core download from TimLoden)
+# wp core download --allow-root ;
 
 #Copy wp-commands.php
 echo "copying wp-commands.php..."
