@@ -4,7 +4,7 @@ MAINTAINER ODI DevOps  "devops@state.ca.gov"
  
 COPY wp-cli.phar /usr/local/bin/wp
 
-ADD https://github.com/CA-CODE-Works/wordpress-azure.git /home/site/wwwroot/
+ADD https://github.com/CA-CODE-Works/wordpress-azure/archive/4.0.0.zip /home/site/wwwroot/
 
 COPY bash-scripts /usr/local/bin/devops/
 COPY htaccesssubdomain /usr/local/bin/devops/
