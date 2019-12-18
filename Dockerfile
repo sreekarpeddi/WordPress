@@ -1,8 +1,10 @@
-FROM appsvc/php:7.3-apache_1908051448
+FRON appsvc/php:7.3-apache_20191031.7
+
 MAINTAINER ODI DevOps  "devops@state.ca.gov"
  
 COPY wp-cli.phar /usr/local/bin/wp
 
+ADD https://github.com/CA-CODE-Works/wordpress-azure.git /home/site/wwwroot/
 
 COPY bash-scripts /usr/local/bin/devops/
 COPY htaccesssubdomain /usr/local/bin/devops/

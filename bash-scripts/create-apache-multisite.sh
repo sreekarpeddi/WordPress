@@ -4,7 +4,7 @@
 cd /home/site/wwwroot/ ;
 
 # Get the wp core
-wp core download --allow-root ;
+#wp core download --allow-root ;
 
 #Copy wp-commands.php
 echo "copying wp-commands.php..."
