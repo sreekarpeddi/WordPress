@@ -1,4 +1,4 @@
-FRON appsvc/php:7.3-apache_20191031.7
+FROM appsvc/php:7.3-apache_20191031.7
 
 MAINTAINER ODI DevOps  "devops@state.ca.gov"
  
