@@ -6,7 +6,7 @@ cd /home/site/wwwroot/ ;
 
 # Get the wp core (old core download from TimLoden)
 # wp core download --allow-root ;
-cp -R /usr/local/bin/devops/wordpress-azure-*/ /home/site/wwwroot/ 
+cp -R /usr/local/bin/devops/wordpress-azure-*/* /home/site/wwwroot/ 
 #Copy wp-commands.php
 echo "copying wp-commands.php..."
 cp /usr/local/bin/devops/wp-commands.php /home/site/wwwroot/wp-commands.php ;
