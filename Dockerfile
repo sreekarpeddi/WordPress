@@ -4,13 +4,16 @@ MAINTAINER ODI DevOps  "devops@state.ca.gov"
  
 COPY wp-cli.phar /usr/local/bin/wp
 
-ADD https://github.com/CA-CODE-Works/wordpress-azure/archive/4.0.0.zip /home/site/wwwroot/
-
+ADD https://github.com/CA-CODE-Works/wordpress-azure/archive/4.0.1.zip ./ 
+RUN apt-get install -y unzip
+RUN unzip 4.0.1.zip -d ./ &&  cp -R ./wordpress-azure-*/* ./ && rm -rf  wordpress-azure-* 4.0.1.zip
+RUN ls -la
 COPY bash-scripts /usr/local/bin/devops/
 COPY htaccesssubdomain /usr/local/bin/devops/
 COPY htaccesssubfolder /usr/local/bin/devops/
 COPY docker-entrypoint.sh /usr/local/bin/devops/
 RUN chmod -R 755 /usr/local/bin/devops/ 
+
 #RUN apt-get update mysql-client
 RUN apt-get install -y \
     mysql-client
