@@ -36,7 +36,6 @@ $divi_token = getenv('DIVI_TOKEN');
 // create wp-config
 
 echo shell_exec("wp config create --dbname='$connectstr_dbname' --dbuser='$connectstr_dbusername' --dbpass='$connectstr_dbpassword' --dbhost='$connectstr_dbhost' --allow-root ;");
-echo shell_exec("sed -i '/table_prefix/a define("FORCE_SSL_ADMIN", true); if ( isset($_SERVER["HTTP_X_ARR_SSL\"]) ) $_SERVER["HTTPS"]="on";' wp-config.php");
 echo ("updated wp-config with Azure specific SSL lines.....................");
 // install WP 
 
