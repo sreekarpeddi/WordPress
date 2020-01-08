@@ -1,5 +1,4 @@
-FROM appsvc/php:7.3-apache_20191031.7
-
+FROM appsvc/php:7.3-apache_20200101.1
 MAINTAINER ODI DevOps  "devops@state.ca.gov"
  
 COPY wp-cli.phar /usr/local/bin/wp
